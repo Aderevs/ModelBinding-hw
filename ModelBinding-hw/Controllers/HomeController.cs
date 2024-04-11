@@ -12,9 +12,16 @@ namespace ModelBinding_hw.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Index(BindingModel model)
+        {
+            Debug.WriteLine($"{nameof(model.First)}: {model.First}");
+            Debug.WriteLine($"Second: {model.Second}");
+            Debug.WriteLine($"Count: {model.Count}");
             return View();
         }
 
